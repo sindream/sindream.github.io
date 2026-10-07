@@ -18,12 +18,16 @@
     {
       "period": "2025 - Present",
       "degree": "Ph.D. Student in Mechanical Engineering",
-      "institution": "Korea Advanced Institute of Science and Technology (KAIST)"
+      "institution": "Korea Advanced Institute of Science and Technology (KAIST)",
+      "laboratory": "Field AI and Robotics (FAIR) Laboratory",
+      "laboratory_url": "https://fair.kaist.ac.kr/"
     },
     {
       "period": "2025",
       "degree": "M.S. in Mechanical Engineering",
-      "institution": "Ulsan National Institute of Science and Technology (UNIST)"
+      "institution": "Ulsan National Institute of Science and Technology (UNIST)",
+      "laboratory": "Autonomous Systems Lab (ASL)",
+      "laboratory_url": "https://asl.unist.ac.kr/"
     },
     {
       "period": "2023",

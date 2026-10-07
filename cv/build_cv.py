@@ -268,6 +268,16 @@ def build() -> Path:
             textColor=MUTED,
             spaceAfter=0,
         ),
+        "entry_lab": ParagraphStyle(
+            "EntryLab",
+            parent=base["BodyText"],
+            fontName="Nunito-Semibold",
+            fontSize=8.8,
+            leading=11.4,
+            textColor=ACCENT,
+            spaceBefore=0.7 * mm,
+            spaceAfter=0,
+        ),
         "publication_title": ParagraphStyle(
             "PublicationTitle",
             parent=base["BodyText"],
@@ -349,13 +359,25 @@ def build() -> Path:
     )
 
     for item in data["education"]:
+        education_details = [
+            Paragraph(esc(item["degree"]), styles["entry_title"]),
+            Paragraph(esc(item["institution"]), styles["entry_text"]),
+        ]
+        if item.get("laboratory"):
+            laboratory = esc(item["laboratory"])
+            if item.get("laboratory_url"):
+                laboratory = (
+                    f'<link href="{esc(item["laboratory_url"])}" color="#287E73">'
+                    f'{laboratory}</link>'
+                )
+            education_details.append(
+                Paragraph(f"Laboratory: {laboratory}", styles["entry_lab"])
+            )
+
         education_row = Table(
             [[
                 Paragraph(esc(item["period"]), styles["period"]),
-                [
-                    Paragraph(esc(item["degree"]), styles["entry_title"]),
-                    Paragraph(esc(item["institution"]), styles["entry_text"]),
-                ],
+                education_details,
             ]],
             colWidths=[31 * mm, 131 * mm],
         )

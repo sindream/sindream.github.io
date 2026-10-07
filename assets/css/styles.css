@@ -865,6 +865,14 @@ h4 {
   font-weight: 650;
 }
 
+.affiliation-lab {
+  display: block;
+  margin-top: 5px;
+  color: var(--accent-dark);
+  font-size: 17px;
+  font-weight: 700;
+}
+
 .profile-links {
   display: flex;
   flex-wrap: wrap;
@@ -915,6 +923,17 @@ h4 {
   margin-bottom: 0;
   color: var(--muted-light);
   font-size: 17px;
+}
+
+.education-list li div > .education-lab {
+  margin-top: 5px;
+  color: var(--accent);
+  font-weight: 650;
+}
+
+.education-lab a,
+.affiliation-lab a {
+  text-decoration-color: currentColor;
 }
 
 .interest-list {
