@@ -1,0 +1,70 @@
+{
+  "name": "Woojae Shin",
+  "affiliation": "KAIST",
+  "website": "https://sindream.github.io/",
+  "github": "https://github.com/sindream",
+  "orcid": "https://orcid.org/0000-0002-6155-3712",
+  "profile": "Research interests span autonomous systems, learning-based estimation, and robotics, with public work in aerial vehicle control, radar-inertial odometry, communication relay planning, source localization, and robust regression under distribution shift.",
+  "interests": [
+    "Autonomous systems",
+    "Learning-based estimation",
+    "Aerial robotics",
+    "Sensor fusion",
+    "Robust machine learning"
+  ],
+  "publications": [
+    {
+      "year": "2026",
+      "title": "Vision-Based Autonomous Drone Landing on Moving Platforms With Uncertain Motion via Deep Reinforcement Learning",
+      "authors": "Woojae Shin, Minwoo Kim, Taewook Park, Geunsik Bae, Seunghwan Kim, and Hyondong Oh",
+      "venue": "IEEE Robotics and Automation Letters, 11(5), 5542-5549",
+      "doi": "https://doi.org/10.1109/LRA.2026.3674011"
+    },
+    {
+      "year": "2026",
+      "title": "Real-Time Communication Relay Planning With a Low-Complexity Network Quality Prediction Model in Dynamic Indoor Missions",
+      "authors": "Jaemin Seo, Jongyun Kim, Seunghwan Kim, Changseung Kim, Woojae Shin, and Hyondong Oh",
+      "venue": "IEEE Robotics and Automation Letters, 11(1), 322-329",
+      "doi": "https://doi.org/10.1109/LRA.2025.3632056"
+    },
+    {
+      "year": "2025",
+      "title": "EKF-Based Radar-Inertial Odometry With Online Temporal Calibration",
+      "authors": "Changseung Kim, Geunsik Bae, Woojae Shin, Sen Wang, and Hyondong Oh",
+      "venue": "IEEE Robotics and Automation Letters, 10(7), 7230-7237",
+      "doi": "https://doi.org/10.1109/LRA.2025.3575320"
+    },
+    {
+      "year": "2024",
+      "title": "Autonomous Landing on a Moving Platform Using Vision-Based Deep Reinforcement Learning",
+      "authors": "Pawel Ladosz, Meraj Mammadov, Heejung Shin, Woojae Shin, and Hyondong Oh",
+      "venue": "IEEE Robotics and Automation Letters, 9(5), 4575-4582",
+      "doi": "https://doi.org/10.1109/LRA.2024.3379837"
+    }
+  ],
+  "projects": [
+    {
+      "name": "STE Torch",
+      "url": "https://github.com/sindream/DSTE",
+      "description": "Vectorized experiments for 2D gas-plume source localization, combining learned estimators, particle methods, and active mobile sensing.",
+      "keywords": "Python, PyTorch, CUDA, particle filtering, active sensing"
+    },
+    {
+      "name": "ReDepth",
+      "url": "https://github.com/sindream/Rectified-Activations-for-Regression-Problem",
+      "description": "RiTA 2024 poster code exploring rectified activations for out-of-distribution regression across synthetic, vision, and depth-estimation tasks.",
+      "keywords": "Python, PyTorch, OOD robustness, depth estimation"
+    }
+  ],
+  "technical_scope": [
+    "Python",
+    "PyTorch",
+    "CUDA",
+    "deep reinforcement learning",
+    "state estimation",
+    "active sensing",
+    "OOD robustness"
+  ],
+  "updated": "October 2026"
+}
+

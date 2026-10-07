@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sindream.github.io/sitemap.xml
+
