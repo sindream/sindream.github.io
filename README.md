@@ -1,10 +1,12 @@
 # sindream.github.io
 
-Personal research portfolio for Woojae Shin, published with GitHub Pages.
+Paper-led research portfolio for Woojae Shin, published with GitHub Pages.
 
 ## Structure
 
-- `index.html`, `assets/`, and supporting root files - files published by GitHub Pages
+- `index.html` - research and publication-led homepage
+- `profile.html` - background, identity, education, and research interests
+- `assets/css/` and `assets/js/` - visual system and lightweight interactions
 - `assets/cv/` - downloadable CV PDF
 - `cv/` - editable CV data and PDF builder
 

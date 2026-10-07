@@ -1,16 +1,36 @@
 {
   "name": "Woojae Shin",
-  "affiliation": "KAIST",
+  "role": "Ph.D. Student in Mechanical Engineering",
+  "affiliation": "Korea Advanced Institute of Science and Technology (KAIST)",
   "website": "https://sindream.github.io/",
-  "github": "https://github.com/sindream",
   "orcid": "https://orcid.org/0000-0002-6155-3712",
-  "profile": "Research interests span autonomous systems, learning-based estimation, and robotics, with public work in aerial vehicle control, radar-inertial odometry, communication relay planning, source localization, and robust regression under distribution shift.",
-  "interests": [
-    "Autonomous systems",
-    "Learning-based estimation",
-    "Aerial robotics",
-    "Sensor fusion",
-    "Robust machine learning"
+  "date_of_birth": "June 26, 1998",
+  "age": "28",
+  "age_as_of": "October 2026",
+  "profile": "Ph.D. student at KAIST researching reinforcement learning for autonomous robotic systems, particularly unmanned aerial vehicles. Broader research experience spans robotic perception, state estimation, and multi-robot systems.",
+  "research_interests": [
+    "Reinforcement learning",
+    "Autonomous UAVs",
+    "Robotic perception",
+    "State estimation",
+    "Multi-robot systems"
+  ],
+  "education": [
+    {
+      "period": "2025 - Present",
+      "degree": "Ph.D. Student in Mechanical Engineering",
+      "institution": "Korea Advanced Institute of Science and Technology (KAIST)"
+    },
+    {
+      "period": "2025",
+      "degree": "M.S. in Mechanical Engineering",
+      "institution": "Ulsan National Institute of Science and Technology (UNIST)"
+    },
+    {
+      "period": "2023",
+      "degree": "B.S. in Mechanical Engineering",
+      "institution": "Ulsan National Institute of Science and Technology (UNIST)"
+    }
   ],
   "publications": [
     {
@@ -41,29 +61,6 @@
       "venue": "IEEE Robotics and Automation Letters, 9(5), 4575-4582",
       "doi": "https://doi.org/10.1109/LRA.2024.3379837"
     }
-  ],
-  "projects": [
-    {
-      "name": "STE Torch",
-      "url": "https://github.com/sindream/DSTE",
-      "description": "Vectorized experiments for 2D gas-plume source localization, combining learned estimators, particle methods, and active mobile sensing.",
-      "keywords": "Python, PyTorch, CUDA, particle filtering, active sensing"
-    },
-    {
-      "name": "ReDepth",
-      "url": "https://github.com/sindream/Rectified-Activations-for-Regression-Problem",
-      "description": "RiTA 2024 poster code exploring rectified activations for out-of-distribution regression across synthetic, vision, and depth-estimation tasks.",
-      "keywords": "Python, PyTorch, OOD robustness, depth estimation"
-    }
-  ],
-  "technical_scope": [
-    "Python",
-    "PyTorch",
-    "CUDA",
-    "deep reinforcement learning",
-    "state estimation",
-    "active sensing",
-    "OOD robustness"
   ],
   "updated": "October 2026"
 }
