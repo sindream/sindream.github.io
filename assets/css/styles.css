@@ -325,6 +325,86 @@ h4 {
   font-size: 18px;
 }
 
+.awards-section,
+.profile-awards {
+  padding-block: clamp(90px, 11vw, 140px);
+  background: #dfe9e4;
+  color: var(--ink);
+}
+
+.awards-list {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--line);
+  list-style: none;
+}
+
+.award-item {
+  display: grid;
+  align-items: start;
+  grid-template-columns: 88px minmax(0, 1fr) auto;
+  gap: 28px;
+  padding-block: 34px;
+  border-top: 1px solid var(--line);
+}
+
+.award-year {
+  margin: 3px 0 0;
+  color: var(--accent-dark);
+  font-size: 17px;
+  font-weight: 750;
+}
+
+.award-copy h3 {
+  margin-bottom: 12px;
+  font-size: clamp(24px, 2.5vw, 31px);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.award-copy h3 span {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.6em;
+  font-weight: 650;
+  letter-spacing: -0.015em;
+}
+
+.award-result {
+  margin-bottom: 6px;
+  color: var(--accent-dark);
+  font-size: 18px;
+  font-weight: 750;
+}
+
+.award-note {
+  max-width: 760px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.award-actions {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.award-link {
+  color: var(--accent-dark);
+  font-size: 16px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.award-link:hover {
+  color: var(--ink);
+}
+
 .publications-section,
 .education-section {
   padding-block: clamp(90px, 11vw, 140px);
@@ -785,6 +865,16 @@ h4 {
   font-weight: 650;
 }
 
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+}
+
+.profile-links a {
+  color: var(--accent-dark);
+}
+
 .education-section .profile-two-column > h2 {
   color: var(--white);
 }
@@ -919,6 +1009,22 @@ h4 {
     grid-template-columns: 72px minmax(0, 1fr);
   }
 
+  .award-item {
+    grid-template-columns: 72px minmax(0, 1fr);
+  }
+
+  .award-actions,
+  .award-item > .award-link {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .award-actions {
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
   .publication-item > .publication-link,
   .publication-actions {
     grid-column: 2;
@@ -1038,6 +1144,25 @@ h4 {
     grid-template-columns: 1fr;
     gap: 10px;
     padding-block: 32px;
+  }
+
+  .award-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding-block: 30px;
+  }
+
+  .award-actions,
+  .award-item > .award-link {
+    grid-column: 1;
+  }
+
+  .award-copy h3 {
+    font-size: 24px;
+  }
+
+  .award-result {
+    font-size: 17px;
   }
 
   .publication-index {

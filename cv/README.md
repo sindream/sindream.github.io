@@ -7,6 +7,8 @@ The current PDF is a public academic CV generated from:
 - official DOI and proceedings metadata
 - KAIST FAIR publication, conference, and thesis records
 - KCI, DBpia, and official conference programs where applicable
+- official AI Grand Prix and ICUAS competition result announcements
+- the owner's public LinkedIn profile URL
 
 Install the PDF dependency, edit `cv_data.json`, then run:
 

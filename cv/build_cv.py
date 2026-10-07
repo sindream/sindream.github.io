@@ -124,6 +124,51 @@ def publication_row(
     return row
 
 
+def award_row(
+    award: dict[str, str],
+    styles: dict[str, ParagraphStyle],
+) -> Table:
+    title = esc(award["title"])
+    link_parts = []
+    if award.get("virtual_url"):
+        link_parts.append(
+            f'<link href="{esc(award["virtual_url"])}" color="#287E73">'
+            f'[{esc(award.get("virtual_link_label", "Virtual result"))}]</link>'
+        )
+    if award.get("url"):
+        link_parts.append(
+            f'<link href="{esc(award["url"])}" color="#287E73">'
+            f'[{esc(award.get("link_label", "Official recap"))}]</link>'
+        )
+    if link_parts:
+        title += " " + " ".join(link_parts)
+
+    details = (
+        f'<font color="#287E73"><b>{esc(award["distinction"])}</b></font><br/>'
+        f'{esc(award["organization"])}<br/>'
+        f'{esc(award["note"])}'
+    )
+    row = Table(
+        [[
+            Paragraph(esc(award["year"]), styles["period"]),
+            [Paragraph(title, styles["entry_title"]), Paragraph(details, styles["entry_text"])],
+        ]],
+        colWidths=[31 * mm, 131 * mm],
+    )
+    row.setStyle(
+        TableStyle(
+            [
+                ("VALIGN", (0, 0), (-1, -1), "TOP"),
+                ("LEFTPADDING", (0, 0), (-1, -1), 0),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+                ("TOPPADDING", (0, 0), (-1, -1), 2),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 5.5),
+            ]
+        )
+    )
+    return row
+
+
 def build() -> Path:
     register_fonts()
     data = json.loads(DATA_PATH.read_text(encoding="utf-8"))
@@ -263,6 +308,7 @@ def build() -> Path:
     links = (
         f'<link href="{esc(data["website"])}" color="#287E73">sindream.github.io</link><br/>'
         f'<link href="{esc(data["orcid"])}" color="#287E73">ORCID 0000-0002-6155-3712</link><br/>'
+        f'<link href="{esc(data["linkedin"])}" color="#287E73">LinkedIn</link><br/>'
         f'Born {esc(data["date_of_birth"])}<br/>'
         f'Updated {esc(data["updated"])}'
     )
@@ -325,6 +371,17 @@ def build() -> Path:
             )
         )
         story.append(KeepTogether([education_row]))
+
+    story.extend(
+        [
+            Spacer(1, 1.2 * mm),
+            section_header("Awards and competitions", styles),
+            Spacer(1, 1.2 * mm),
+        ]
+    )
+
+    for award in data["awards_competitions"]:
+        story.append(KeepTogether([award_row(award, styles)]))
 
     story.extend(
         [

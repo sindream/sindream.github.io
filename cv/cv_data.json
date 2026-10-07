@@ -4,6 +4,7 @@
   "affiliation": "Korea Advanced Institute of Science and Technology (KAIST)",
   "website": "https://sindream.github.io/",
   "orcid": "https://orcid.org/0000-0002-6155-3712",
+  "linkedin": "https://kr.linkedin.com/in/woojae-shin-71358039b",
   "date_of_birth": "June 26, 1998",
   "profile": "Ph.D. student at KAIST researching reinforcement learning for autonomous robotic systems, particularly unmanned aerial vehicles. Research interests also include robotic perception, state estimation, and multi-robot systems.",
   "research_interests": [
@@ -28,6 +29,28 @@
       "period": "2023",
       "degree": "B.S. in Mechanical Engineering",
       "institution": "Ulsan National Institute of Science and Technology (UNIST)"
+    }
+  ],
+  "awards_competitions": [
+    {
+      "year": "2026",
+      "title": "AI Grand Prix — Team KAIST-FAIR",
+      "distinction": "1st place, Virtual Qualifier 2; 2nd place, Physical Qualifier",
+      "organization": "Autonomous drone racing competition",
+      "note": "Qualified for the Season 1 Championship, scheduled for December 11, 2026; championship not yet contested.",
+      "virtual_url": "https://www.linkedin.com/posts/changseung-kim-616762309_theaigrandprix-anduril-droneracing-activity-7490751947973726208-EEYD",
+      "virtual_link_label": "Virtual result",
+      "url": "https://dronechampionsleague.com/ai-grand-prix-physical-qualifier/",
+      "link_label": "Physical recap"
+    },
+    {
+      "year": "2024",
+      "title": "ICUAS 2024 UAV Competition — Team UNIST ASL",
+      "distinction": "Winner",
+      "organization": "International Conference on Unmanned Aircraft Systems, Chania, Greece",
+      "note": "Crop-yield estimation in indoor and outdoor agricultural scenarios.",
+      "url": "https://aerostream.fer.hr/aerostream/news?%40=30z3j",
+      "link_label": "Official result"
     }
   ],
   "publication_sections": [
@@ -150,9 +173,7 @@
           "year": "2024",
           "title": "RAPID: Robust and Agile Planner Using Inverse Reinforcement Learning for Drones",
           "authors": "Minwoo Kim, Geunsik Bae, Jinwoo Lee, Woojae Shin, Heejung Shin, Myong-Yol Choi, and Hyondong Oh",
-          "venue": "14th Workshop on Planning, Perception and Navigation for Intelligent Vehicles at IROS 2024, Abu Dhabi, UAE",
-          "url": "https://fair.kaist.ac.kr/international-conferences/",
-          "link_label": "Record"
+          "venue": "14th Workshop on Planning, Perception and Navigation for Intelligent Vehicles at IROS 2024, Abu Dhabi, UAE"
         },
         {
           "year": "2024",
@@ -203,9 +224,7 @@
           "year": "2025",
           "title": "Vision-Based Autonomous Landing on a Fast-Moving Platform Using Deep Reinforcement Learning",
           "authors": "Woojae Shin, Minwoo Kim, Taewook Park, and Hyondong Oh",
-          "venue": "20th Korea Robotics Society Annual Conference, Pyeongchang, Korea (presentation)",
-          "url": "https://fair.kaist.ac.kr/domestic-conferences/",
-          "link_label": "Record"
+          "venue": "20th Korea Robotics Society Annual Conference, Pyeongchang, Korea (presentation)"
         },
         {
           "year": "2024",
@@ -224,9 +243,7 @@
           "year": "2025",
           "title": "Vision-Based Autonomous Drone Landing on Highly Dynamic Moving Platforms via Deep Reinforcement Learning",
           "authors": "Woojae Shin",
-          "venue": "M.S. thesis, Ulsan National Institute of Science and Technology (UNIST), August 2025",
-          "url": "https://fair.kaist.ac.kr/thesisdissertations/",
-          "link_label": "Record"
+          "venue": "M.S. thesis, Ulsan National Institute of Science and Technology (UNIST), August 2025"
         }
       ]
     }
