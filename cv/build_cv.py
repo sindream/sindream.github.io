@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 
 from reportlab.lib import colors
-from reportlab.lib.enums import TA_RIGHT
+from reportlab.lib.enums import TA_LEFT, TA_RIGHT
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
@@ -27,6 +27,7 @@ MUTED = colors.HexColor("#68716D")
 ACCENT = colors.HexColor("#287E73")
 LINE = colors.HexColor("#CDD4D0")
 SOFT = colors.HexColor("#EEF2EF")
+CONTENT_WIDTH = 178 * mm
 
 
 def esc(value: str) -> str:
@@ -66,7 +67,11 @@ def page_decoration(canvas, document) -> None:
 
 
 def section_header(title: str, styles: dict[str, ParagraphStyle]) -> Table:
-    table = Table([[Paragraph(esc(title), styles["section"])]], colWidths=[162 * mm])
+    table = Table(
+        [[Paragraph(esc(title), styles["section"])]],
+        colWidths=[CONTENT_WIDTH],
+        hAlign="LEFT",
+    )
     table.setStyle(
         TableStyle(
             [
@@ -195,6 +200,7 @@ def build() -> Path:
             fontName="Nunito-Bold",
             fontSize=29,
             leading=31,
+            alignment=TA_LEFT,
             textColor=INK,
             spaceAfter=2.3 * mm,
         ),
@@ -331,7 +337,8 @@ def build() -> Path:
             ],
             Paragraph(links, styles["meta"]),
         ]],
-        colWidths=[116 * mm, 46 * mm],
+        colWidths=[132 * mm, 46 * mm],
+        hAlign="LEFT",
     )
     header.setStyle(
         TableStyle(
