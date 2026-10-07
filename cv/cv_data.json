@@ -5,9 +5,7 @@
   "website": "https://sindream.github.io/",
   "orcid": "https://orcid.org/0000-0002-6155-3712",
   "date_of_birth": "June 26, 1998",
-  "age": "28",
-  "age_as_of": "October 2026",
-  "profile": "Ph.D. student at KAIST researching reinforcement learning for autonomous robotic systems, particularly unmanned aerial vehicles. Broader research experience spans robotic perception, state estimation, and multi-robot systems.",
+  "profile": "Ph.D. student at KAIST researching reinforcement learning for autonomous robotic systems, particularly unmanned aerial vehicles. Research interests also include robotic perception, state estimation, and multi-robot systems.",
   "research_interests": [
     "Reinforcement learning",
     "Autonomous UAVs",
@@ -64,4 +62,3 @@
   ],
   "updated": "October 2026"
 }
-

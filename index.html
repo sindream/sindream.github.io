@@ -3,21 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#050607">
-    <meta name="description" content="Woojae Shin is a Ph.D. student at KAIST researching reinforcement learning, perception, state estimation, and autonomous UAV systems.">
+    <meta name="theme-color" content="#0d0f0e">
+    <meta name="description" content="Woojae Shin is a Ph.D. student in Mechanical Engineering at KAIST. His research interests include reinforcement learning, autonomous UAVs, perception, state estimation, and multi-robot systems.">
     <link rel="canonical" href="https://sindream.github.io/">
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="assets/js/site.js" defer></script>
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Woojae Shin - Autonomous Systems Research">
-    <meta property="og:description" content="Reinforcement learning and estimation for autonomous robotic systems operating under uncertainty.">
+    <meta property="og:title" content="Woojae Shin | KAIST">
+    <meta property="og:description" content="Ph.D. student researching reinforcement learning and autonomous robotic systems.">
     <meta property="og:url" content="https://sindream.github.io/">
     <meta property="og:site_name" content="Woojae Shin">
     <meta name="twitter:card" content="summary">
 
-    <title>Woojae Shin - Autonomous Systems Research</title>
+    <title>Woojae Shin | KAIST</title>
 
     <script type="application/ld+json">
       {
@@ -39,208 +39,145 @@
   <body class="page-home">
     <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <header class="site-header" data-header>
+    <header class="site-header">
       <div class="site-shell header-inner">
-        <a class="wordmark" href="#top" aria-label="Woojae Shin, home">
-          <span class="wordmark-mark" aria-hidden="true">W/S</span>
-          <span class="wordmark-name">Woojae Shin</span>
-        </a>
+        <a class="wordmark" href="#top" aria-label="Woojae Shin, home">Woojae Shin</a>
         <nav class="site-nav" aria-label="Primary navigation">
           <a href="#research">Research</a>
           <a href="#publications">Publications</a>
-          <a href="profile.html">Profile</a>
-          <a class="nav-cv" href="assets/cv/woojae-shin-cv.pdf">CV <span aria-hidden="true">&darr;</span></a>
+          <a href="profile.html">About</a>
+          <a href="assets/cv/woojae-shin-cv.pdf">CV (PDF)</a>
         </nav>
       </div>
     </header>
 
     <main id="main-content">
       <section class="hero" id="top" aria-labelledby="hero-title">
-        <canvas class="trajectory-canvas" data-trajectory-field aria-hidden="true"></canvas>
-        <div class="hero-grid" aria-hidden="true"></div>
-        <div class="hero-vignette" aria-hidden="true"></div>
-
-        <div class="site-shell hero-inner">
-          <div class="hero-topline" data-reveal>
-            <p>Woojae Shin <span>/</span> KAIST</p>
-            <p>Mechanical Engineering <span>/</span> Daejeon, KR</p>
-          </div>
-
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="site-shell hero-layout">
           <div class="hero-copy" data-reveal>
-            <p class="eyebrow"><span>Research 2026</span><span class="eyebrow-line"></span></p>
-            <h1 id="hero-title">Autonomy,<br><span>under uncertainty.</span></h1>
-            <p class="hero-lede">I develop learning and estimation methods for autonomous robotic systems, with a focus on UAVs operating in dynamic and uncertain environments.</p>
-            <div class="hero-actions">
-              <a class="button button-solid" href="#research">Explore research <span aria-hidden="true">&darr;</span></a>
-              <a class="button button-ghost" href="#publications">View publications <span aria-hidden="true">&searr;</span></a>
+            <p class="hero-affiliation">Ph.D. student in Mechanical Engineering at KAIST</p>
+            <h1 id="hero-title">Woojae Shin</h1>
+            <p class="hero-focus">Reinforcement learning for autonomous robotic systems.</p>
+            <p class="hero-lede">I work primarily on autonomous UAVs. My broader research interests include robotic perception, state estimation, and multi-robot systems.</p>
+            <div class="text-links" aria-label="Quick links">
+              <a href="#publications">Publications</a>
+              <a href="profile.html">About me</a>
+              <a href="assets/cv/woojae-shin-cv.pdf">CV</a>
+              <a href="https://orcid.org/0000-0002-6155-3712" target="_blank" rel="noopener noreferrer">ORCID</a>
             </div>
           </div>
 
-          <div class="hero-rail" data-reveal>
-            <div>
-              <span class="rail-label">Current role</span>
-              <strong>Ph.D. Student</strong>
-            </div>
-            <div>
-              <span class="rail-label">Primary focus</span>
-              <strong>Reinforcement Learning</strong>
-            </div>
-            <div>
-              <span class="rail-label">Platform</span>
-              <strong>Autonomous UAVs</strong>
-            </div>
-            <a href="profile.html">Profile <span aria-hidden="true">&nearr;</span></a>
+          <aside class="hero-card" data-reveal aria-label="Current research interests">
+            <h2>Current interests</h2>
+            <ul>
+              <li>Reinforcement learning</li>
+              <li>Autonomous UAVs</li>
+              <li>Robotic perception</li>
+              <li>State estimation</li>
+              <li>Multi-robot systems</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="research-section" id="research" aria-labelledby="research-title">
+        <div class="site-shell">
+          <div class="section-heading" data-reveal>
+            <h2 id="research-title">Research interests</h2>
+            <p>My research focuses on learning and estimation for autonomous robotic systems, particularly UAVs working in dynamic environments.</p>
+          </div>
+
+          <div class="interest-grid">
+            <article class="interest-card" data-reveal>
+              <h3>Reinforcement learning for aerial robots</h3>
+              <p>Learning-based control for autonomous UAV tasks, including landing on moving platforms with uncertain motion.</p>
+            </article>
+            <article class="interest-card" data-reveal>
+              <h3>Vision-based autonomy</h3>
+              <p>Using visual observations to support perception and decision-making for autonomous flight.</p>
+            </article>
+            <article class="interest-card" data-reveal>
+              <h3>State estimation</h3>
+              <p>Radar-inertial odometry and temporal calibration for reliable motion estimation.</p>
+            </article>
+            <article class="interest-card" data-reveal>
+              <h3>Networked and multi-robot systems</h3>
+              <p>Communication-aware planning for robots operating together in dynamic environments.</p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="statement light-section" id="research" aria-labelledby="statement-title">
-        <div class="site-shell editorial-grid">
-          <div class="section-index" data-reveal>
-            <span>01</span>
-            <p>Research statement</p>
+      <section class="publications-section" id="publications" aria-labelledby="publications-title">
+        <div class="site-shell">
+          <div class="section-heading section-heading-dark" data-reveal>
+            <h2 id="publications-title">Publications</h2>
+            <p>All peer-reviewed publications, listed in reverse chronological order.</p>
           </div>
-          <div class="statement-content" data-reveal>
-            <p class="section-overline">Perceive / Estimate / Act</p>
-            <h2 id="statement-title">Robots that remain capable when the world refuses to stay still.</h2>
-            <p class="statement-body">My research explores how aerial and networked robotic systems can operate reliably in dynamic environments. I work across deep reinforcement learning, vision-based autonomy, state estimation, and communication-aware planning.</p>
+
+          <div class="publication-list">
+            <article class="publication-item" data-reveal>
+              <p class="publication-year">2026</p>
+              <div class="publication-copy">
+                <h3><a href="https://doi.org/10.1109/LRA.2026.3674011" target="_blank" rel="noopener noreferrer">Vision-Based Autonomous Drone Landing on Moving Platforms With Uncertain Motion via Deep Reinforcement Learning</a></h3>
+                <p class="authors"><strong>Woojae Shin</strong>, Minwoo Kim, Taewook Park, Geunsik Bae, Seunghwan Kim, and Hyondong Oh</p>
+                <p class="venue"><em>IEEE Robotics and Automation Letters</em>, 11(5), 5542-5549.</p>
+              </div>
+              <a class="doi-link" href="https://doi.org/10.1109/LRA.2026.3674011" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Vision-Based Autonomous Drone Landing">DOI</a>
+            </article>
+
+            <article class="publication-item" data-reveal>
+              <p class="publication-year">2026</p>
+              <div class="publication-copy">
+                <h3><a href="https://doi.org/10.1109/LRA.2025.3632056" target="_blank" rel="noopener noreferrer">Real-Time Communication Relay Planning With a Low-Complexity Network Quality Prediction Model in Dynamic Indoor Missions</a></h3>
+                <p class="authors">Jaemin Seo, Jongyun Kim, Seunghwan Kim, Changseung Kim, <strong>Woojae Shin</strong>, and Hyondong Oh</p>
+                <p class="venue"><em>IEEE Robotics and Automation Letters</em>, 11(1), 322-329.</p>
+              </div>
+              <a class="doi-link" href="https://doi.org/10.1109/LRA.2025.3632056" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Real-Time Communication Relay Planning">DOI</a>
+            </article>
+
+            <article class="publication-item" data-reveal>
+              <p class="publication-year">2025</p>
+              <div class="publication-copy">
+                <h3><a href="https://doi.org/10.1109/LRA.2025.3575320" target="_blank" rel="noopener noreferrer">EKF-Based Radar-Inertial Odometry With Online Temporal Calibration</a></h3>
+                <p class="authors">Changseung Kim, Geunsik Bae, <strong>Woojae Shin</strong>, Sen Wang, and Hyondong Oh</p>
+                <p class="venue"><em>IEEE Robotics and Automation Letters</em>, 10(7), 7230-7237.</p>
+              </div>
+              <a class="doi-link" href="https://doi.org/10.1109/LRA.2025.3575320" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for EKF-Based Radar-Inertial Odometry">DOI</a>
+            </article>
+
+            <article class="publication-item" data-reveal>
+              <p class="publication-year">2024</p>
+              <div class="publication-copy">
+                <h3><a href="https://doi.org/10.1109/LRA.2024.3379837" target="_blank" rel="noopener noreferrer">Autonomous Landing on a Moving Platform Using Vision-Based Deep Reinforcement Learning</a></h3>
+                <p class="authors">Pawel Ladosz, Meraj Mammadov, Heejung Shin, <strong>Woojae Shin</strong>, and Hyondong Oh</p>
+                <p class="venue"><em>IEEE Robotics and Automation Letters</em>, 9(5), 4575-4582.</p>
+              </div>
+              <a class="doi-link" href="https://doi.org/10.1109/LRA.2024.3379837" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Autonomous Landing on a Moving Platform">DOI</a>
+            </article>
           </div>
-        </div>
-
-        <div class="site-shell research-grid">
-          <article class="research-card" data-reveal>
-            <div class="card-topline"><span>01 / 03</span><span>UAV</span></div>
-            <div class="research-mark" aria-hidden="true">
-              <span class="mark-orbit"></span><span class="mark-core"></span>
-            </div>
-            <h3>Aerial autonomy</h3>
-            <p>Vision-based control and deep reinforcement learning for landing UAVs on moving platforms, including platforms with uncertain motion.</p>
-            <a href="https://doi.org/10.1109/LRA.2026.3674011" target="_blank" rel="noopener noreferrer">Related paper <span aria-hidden="true">&nearr;</span></a>
-          </article>
-
-          <article class="research-card" data-reveal>
-            <div class="card-topline"><span>02 / 03</span><span>ESTIMATION</span></div>
-            <div class="research-mark research-mark-axis" aria-hidden="true">
-              <span></span><span></span><span></span>
-            </div>
-            <h3>State estimation</h3>
-            <p>Radar-inertial odometry with online temporal calibration for reliable motion estimation across asynchronous sensor streams.</p>
-            <a href="https://doi.org/10.1109/LRA.2025.3575320" target="_blank" rel="noopener noreferrer">Related paper <span aria-hidden="true">&nearr;</span></a>
-          </article>
-
-          <article class="research-card" data-reveal>
-            <div class="card-topline"><span>03 / 03</span><span>MULTI-ROBOT</span></div>
-            <div class="research-mark research-mark-network" aria-hidden="true">
-              <span></span><span></span><span></span><span></span>
-            </div>
-            <h3>Networked robotics</h3>
-            <p>Real-time communication relay planning supported by low-complexity network-quality prediction in dynamic indoor missions.</p>
-            <a href="https://doi.org/10.1109/LRA.2025.3632056" target="_blank" rel="noopener noreferrer">Related paper <span aria-hidden="true">&nearr;</span></a>
-          </article>
         </div>
       </section>
 
-      <section class="publications dark-section" id="publications" aria-labelledby="publications-title">
-        <div class="site-shell editorial-grid publications-heading">
-          <div class="section-index section-index-dark" data-reveal>
-            <span>02</span>
-            <p>Publications</p>
+      <section class="about-section" id="about" aria-labelledby="about-title">
+        <div class="site-shell about-layout">
+          <h2 id="about-title" data-reveal>About</h2>
+          <div class="about-copy" data-reveal>
+            <p>I am a Ph.D. student in the Department of Mechanical Engineering at KAIST. I received my M.S. and B.S. degrees in Mechanical Engineering from UNIST in 2025 and 2023, respectively.</p>
+            <a class="plain-link" href="profile.html">More about me</a>
           </div>
-          <div data-reveal>
-            <p class="section-overline">Peer-reviewed research / 2024-2026</p>
-            <h2 id="publications-title">Selected publications.</h2>
-            <p class="section-intro">Work across autonomous aerial systems, sensor fusion, and networked robotics. Publication metadata is linked to the DOI record.</p>
-          </div>
-        </div>
-
-        <div class="site-shell publication-feature" data-reveal>
-          <div class="feature-visual" aria-hidden="true">
-            <div class="feature-grid"></div>
-            <span class="flight-path flight-path-a"></span>
-            <span class="flight-path flight-path-b"></span>
-            <span class="flight-node flight-node-a"></span>
-            <span class="flight-node flight-node-b"></span>
-            <span class="feature-coordinate">DAEJEON / REPUBLIC OF KOREA</span>
-            <span class="feature-number">01</span>
-          </div>
-          <article class="feature-copy">
-            <div class="publication-meta"><span>2026</span><span>IEEE RA-L</span><span>First author</span></div>
-            <h3>Vision-Based Autonomous Drone Landing on Moving Platforms With Uncertain Motion via Deep Reinforcement Learning</h3>
-            <p class="authors"><strong>Woojae Shin</strong>, Minwoo Kim, Taewook Park, Geunsik Bae, Seunghwan Kim, and Hyondong Oh</p>
-            <p class="publication-summary">Extends vision-based autonomous landing toward moving platforms whose motion is uncertain, using deep reinforcement learning for aerial decision-making.</p>
-            <a class="paper-link" href="https://doi.org/10.1109/LRA.2026.3674011" target="_blank" rel="noopener noreferrer">Read DOI record <span aria-hidden="true">&nearr;</span></a>
-          </article>
-        </div>
-
-        <ol class="site-shell publication-list">
-          <li class="publication-row" data-reveal>
-            <div class="publication-order">02</div>
-            <div class="publication-year">2026</div>
-            <div class="publication-details">
-              <h3>Real-Time Communication Relay Planning With a Low-Complexity Network Quality Prediction Model in Dynamic Indoor Missions</h3>
-              <p>Jaemin Seo, Jongyun Kim, Seunghwan Kim, Changseung Kim, <strong>Woojae Shin</strong>, and Hyondong Oh</p>
-              <p class="venue">IEEE Robotics and Automation Letters, 11(1), 322-329</p>
-            </div>
-            <a href="https://doi.org/10.1109/LRA.2025.3632056" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Real-Time Communication Relay Planning">DOI <span aria-hidden="true">&nearr;</span></a>
-          </li>
-          <li class="publication-row" data-reveal>
-            <div class="publication-order">03</div>
-            <div class="publication-year">2025</div>
-            <div class="publication-details">
-              <h3>EKF-Based Radar-Inertial Odometry With Online Temporal Calibration</h3>
-              <p>Changseung Kim, Geunsik Bae, <strong>Woojae Shin</strong>, Sen Wang, and Hyondong Oh</p>
-              <p class="venue">IEEE Robotics and Automation Letters, 10(7), 7230-7237</p>
-            </div>
-            <a href="https://doi.org/10.1109/LRA.2025.3575320" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for EKF-Based Radar-Inertial Odometry">DOI <span aria-hidden="true">&nearr;</span></a>
-          </li>
-          <li class="publication-row" data-reveal>
-            <div class="publication-order">04</div>
-            <div class="publication-year">2024</div>
-            <div class="publication-details">
-              <h3>Autonomous Landing on a Moving Platform Using Vision-Based Deep Reinforcement Learning</h3>
-              <p>Pawel Ladosz, Meraj Mammadov, Heejung Shin, <strong>Woojae Shin</strong>, and Hyondong Oh</p>
-              <p class="venue">IEEE Robotics and Automation Letters, 9(5), 4575-4582</p>
-            </div>
-            <a href="https://doi.org/10.1109/LRA.2024.3379837" target="_blank" rel="noopener noreferrer" aria-label="Open DOI for Autonomous Landing on a Moving Platform">DOI <span aria-hidden="true">&nearr;</span></a>
-          </li>
-        </ol>
-      </section>
-
-      <section class="profile-teaser" aria-labelledby="profile-teaser-title">
-        <div class="teaser-panel teaser-panel-copy" data-reveal>
-          <p class="section-overline">03 / Profile</p>
-          <h2 id="profile-teaser-title">Researching autonomous robotic systems at KAIST.</h2>
-          <p>Woojae Shin is a Ph.D. student in Mechanical Engineering at KAIST. His work focuses on reinforcement learning for autonomous UAVs, with broader experience in perception, state estimation, and multi-robot systems.</p>
-          <a class="button button-dark" href="profile.html">View full profile <span aria-hidden="true">&nearr;</span></a>
-        </div>
-        <div class="teaser-panel teaser-panel-data" data-reveal>
-          <div class="data-header"><span>RESEARCHER PROFILE</span><span>WS-01</span></div>
-          <dl>
-            <div><dt>Discipline</dt><dd>Mechanical Engineering</dd></div>
-            <div><dt>Institution</dt><dd>KAIST</dd></div>
-            <div><dt>Research</dt><dd>Autonomous Robotic Systems</dd></div>
-            <div><dt>Education</dt><dd>KAIST / UNIST</dd></div>
-          </dl>
-          <div class="data-signal" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="site-shell footer-main">
-        <div>
-          <p class="footer-name">Woojae Shin</p>
-          <p>Ph.D. Student, Mechanical Engineering<br>Korea Advanced Institute of Science and Technology</p>
-        </div>
-        <div class="footer-links">
-          <a href="profile.html">Profile <span aria-hidden="true">&nearr;</span></a>
-          <a href="https://orcid.org/0000-0002-6155-3712" target="_blank" rel="noopener noreferrer">ORCID <span aria-hidden="true">&nearr;</span></a>
-          <a href="assets/cv/woojae-shin-cv.pdf">CV PDF <span aria-hidden="true">&darr;</span></a>
-        </div>
-      </div>
-      <div class="site-shell footer-bottom">
+      <div class="site-shell footer-inner">
         <p>&copy; <span data-current-year>2026</span> Woojae Shin</p>
-        <p>Autonomy / Estimation / Robotics</p>
+        <div>
+          <a href="https://orcid.org/0000-0002-6155-3712" target="_blank" rel="noopener noreferrer">ORCID</a>
+          <a href="assets/cv/woojae-shin-cv.pdf">CV</a>
+        </div>
       </div>
     </footer>
   </body>

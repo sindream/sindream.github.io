@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build Woojae Shin's paper-led public research CV."""
+"""Build Woojae Shin's public academic CV."""
 
 from __future__ import annotations
 
@@ -12,22 +12,21 @@ from reportlab.lib.enums import TA_RIGHT
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import KeepTogether, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_PATH = Path(__file__).with_name("cv_data.json")
 OUTPUT_PATH = ROOT / "assets" / "cv" / "woojae-shin-cv.pdf"
+FONT_DIR = ROOT / "assets" / "fonts"
 
-BLACK = colors.HexColor("#050607")
-INK = colors.HexColor("#111416")
-WHITE = colors.HexColor("#F4F6F6")
-MUTED = colors.HexColor("#626B6D")
-MUTED_LIGHT = colors.HexColor("#A6AFB1")
-ACCENT = colors.HexColor("#2B8F8A")
-ACCENT_LIGHT = colors.HexColor("#63D7D1")
-LINE = colors.HexColor("#CCD0CE")
-PAPER = colors.HexColor("#F2F2ED")
+INK = colors.HexColor("#18201D")
+MUTED = colors.HexColor("#68716D")
+ACCENT = colors.HexColor("#287E73")
+LINE = colors.HexColor("#CDD4D0")
+SOFT = colors.HexColor("#EEF2EF")
 
 
 def esc(value: str) -> str:
@@ -40,32 +39,42 @@ def emphasize_name(authors: str, name: str) -> str:
     return safe_authors.replace(safe_name, f"<b>{safe_name}</b>")
 
 
-def page_decoration(canvas, document):
+def register_fonts() -> None:
+    pdfmetrics.registerFont(TTFont("Nunito", FONT_DIR / "nunito-sans-regular.ttf"))
+    pdfmetrics.registerFont(TTFont("Nunito-Semibold", FONT_DIR / "nunito-sans-semibold.ttf"))
+    pdfmetrics.registerFont(TTFont("Nunito-Bold", FONT_DIR / "nunito-sans-bold.ttf"))
+    pdfmetrics.registerFontFamily(
+        "Nunito",
+        normal="Nunito",
+        bold="Nunito-Bold",
+        italic="Nunito",
+        boldItalic="Nunito-Bold",
+    )
+
+
+def page_decoration(canvas, document) -> None:
     canvas.saveState()
     width, _ = A4
     canvas.setStrokeColor(LINE)
     canvas.setLineWidth(0.45)
     canvas.line(document.leftMargin, 12 * mm, width - document.rightMargin, 12 * mm)
-    canvas.setFont("Helvetica", 6.8)
+    canvas.setFont("Nunito", 7.2)
     canvas.setFillColor(MUTED)
-    canvas.drawString(document.leftMargin, 8.3 * mm, "Woojae Shin - Research CV")
+    canvas.drawString(document.leftMargin, 8.3 * mm, "Woojae Shin - Curriculum Vitae")
     canvas.drawRightString(width - document.rightMargin, 8.3 * mm, f"Page {document.page}")
     canvas.restoreState()
 
 
 def section_header(title: str, styles: dict[str, ParagraphStyle]) -> Table:
-    table = Table(
-        [[Paragraph(esc(title.upper()), styles["section"]), Paragraph("RESEARCH PROFILE", styles["section_meta"])]],
-        colWidths=[81 * mm, 81 * mm],
-    )
+    table = Table([[Paragraph(esc(title), styles["section"])]], colWidths=[162 * mm])
     table.setStyle(
         TableStyle(
             [
-                ("LINEABOVE", (0, 0), (-1, 0), 0.8, INK),
+                ("LINEBELOW", (0, 0), (-1, -1), 0.7, LINE),
                 ("LEFTPADDING", (0, 0), (-1, -1), 0),
                 ("RIGHTPADDING", (0, 0), (-1, -1), 0),
-                ("TOPPADDING", (0, 0), (-1, -1), 5),
-                ("BOTTOMPADDING", (0, 0), (-1, -1), 5),
+                ("TOPPADDING", (0, 0), (-1, -1), 0),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
             ]
         )
     )
@@ -73,6 +82,7 @@ def section_header(title: str, styles: dict[str, ParagraphStyle]) -> Table:
 
 
 def build() -> Path:
+    register_fonts()
     data = json.loads(DATA_PATH.read_text(encoding="utf-8"))
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
 
@@ -83,9 +93,9 @@ def build() -> Path:
         leftMargin=16 * mm,
         topMargin=14 * mm,
         bottomMargin=17 * mm,
-        title=f"{data['name']} - Research CV",
+        title=f"{data['name']} - Curriculum Vitae",
         author=data["name"],
-        subject="Paper-led public research curriculum vitae",
+        subject="Academic curriculum vitae",
         creator="ReportLab",
     )
 
@@ -94,129 +104,114 @@ def build() -> Path:
         "name": ParagraphStyle(
             "Name",
             parent=base["Title"],
-            fontName="Helvetica-Bold",
-            fontSize=27,
-            leading=28,
-            textColor=WHITE,
-            spaceAfter=2.2 * mm,
+            fontName="Nunito-Bold",
+            fontSize=29,
+            leading=31,
+            textColor=INK,
+            spaceAfter=2.3 * mm,
         ),
         "role": ParagraphStyle(
             "Role",
             parent=base["Normal"],
-            fontName="Helvetica-Bold",
-            fontSize=9.4,
-            leading=12.3,
-            textColor=ACCENT_LIGHT,
-            spaceAfter=1 * mm,
+            fontName="Nunito-Semibold",
+            fontSize=10.8,
+            leading=13.8,
+            textColor=ACCENT,
+            spaceAfter=0.6 * mm,
         ),
         "affiliation": ParagraphStyle(
             "Affiliation",
             parent=base["Normal"],
-            fontName="Helvetica",
-            fontSize=7.6,
-            leading=10.5,
-            textColor=MUTED_LIGHT,
+            fontName="Nunito",
+            fontSize=9.2,
+            leading=12.2,
+            textColor=MUTED,
         ),
-        "links": ParagraphStyle(
-            "Links",
+        "meta": ParagraphStyle(
+            "Meta",
             parent=base["Normal"],
-            fontName="Helvetica",
-            fontSize=7.4,
-            leading=11.5,
+            fontName="Nunito",
+            fontSize=8.7,
+            leading=12.8,
             alignment=TA_RIGHT,
-            textColor=MUTED_LIGHT,
+            textColor=MUTED,
         ),
         "body": ParagraphStyle(
             "Body",
             parent=base["BodyText"],
-            fontName="Helvetica",
-            fontSize=8.35,
-            leading=11.6,
+            fontName="Nunito",
+            fontSize=10,
+            leading=14,
             textColor=INK,
-            spaceAfter=0,
-        ),
-        "small": ParagraphStyle(
-            "Small",
-            parent=base["BodyText"],
-            fontName="Helvetica",
-            fontSize=7.1,
-            leading=9.6,
-            textColor=MUTED,
             spaceAfter=0,
         ),
         "section": ParagraphStyle(
             "Section",
             parent=base["Heading2"],
-            fontName="Helvetica-Bold",
-            fontSize=8.2,
-            leading=10,
+            fontName="Nunito-Bold",
+            fontSize=12,
+            leading=14.5,
             textColor=INK,
             spaceAfter=0,
-        ),
-        "section_meta": ParagraphStyle(
-            "SectionMeta",
-            parent=base["Normal"],
-            fontName="Courier",
-            fontSize=6.7,
-            leading=10,
-            alignment=TA_RIGHT,
-            textColor=MUTED,
-        ),
-        "label": ParagraphStyle(
-            "Label",
-            parent=base["Normal"],
-            fontName="Courier-Bold",
-            fontSize=6.5,
-            leading=8.5,
-            textColor=ACCENT,
-        ),
-        "value": ParagraphStyle(
-            "Value",
-            parent=base["Normal"],
-            fontName="Helvetica-Bold",
-            fontSize=8.2,
-            leading=10.5,
-            textColor=INK,
         ),
         "period": ParagraphStyle(
             "Period",
             parent=base["Normal"],
-            fontName="Courier-Bold",
-            fontSize=7.2,
-            leading=9.5,
+            fontName="Nunito-Semibold",
+            fontSize=9,
+            leading=11.4,
             textColor=ACCENT,
         ),
         "entry_title": ParagraphStyle(
             "EntryTitle",
             parent=base["BodyText"],
-            fontName="Helvetica-Bold",
-            fontSize=8.8,
-            leading=10.8,
+            fontName="Nunito-Semibold",
+            fontSize=10.5,
+            leading=12.8,
             textColor=INK,
-            spaceAfter=0.8 * mm,
+            spaceAfter=0.7 * mm,
         ),
         "entry_text": ParagraphStyle(
             "EntryText",
             parent=base["BodyText"],
-            fontName="Helvetica",
-            fontSize=7.05,
-            leading=9.2,
+            fontName="Nunito",
+            fontSize=8.8,
+            leading=11.4,
             textColor=MUTED,
-            spaceAfter=0.4 * mm,
+            spaceAfter=0,
         ),
-        "footer_note": ParagraphStyle(
-            "FooterNote",
-            parent=base["Normal"],
-            fontName="Helvetica",
-            fontSize=6.6,
-            leading=8.8,
+        "publication_title": ParagraphStyle(
+            "PublicationTitle",
+            parent=base["BodyText"],
+            fontName="Nunito-Semibold",
+            fontSize=10.2,
+            leading=12.6,
+            textColor=INK,
+            spaceAfter=0.7 * mm,
+        ),
+        "publication_text": ParagraphStyle(
+            "PublicationText",
+            parent=base["BodyText"],
+            fontName="Nunito",
+            fontSize=8.7,
+            leading=11,
             textColor=MUTED,
+            spaceAfter=0,
+        ),
+        "interests": ParagraphStyle(
+            "Interests",
+            parent=base["BodyText"],
+            fontName="Nunito",
+            fontSize=9.8,
+            leading=13,
+            textColor=INK,
         ),
     }
 
     links = (
-        f'<link href="{esc(data["website"])}" color="#63D7D1">sindream.github.io</link><br/>'
-        f'<link href="{esc(data["orcid"])}" color="#63D7D1">ORCID 0000-0002-6155-3712</link>'
+        f'<link href="{esc(data["website"])}" color="#287E73">sindream.github.io</link><br/>'
+        f'<link href="{esc(data["orcid"])}" color="#287E73">ORCID 0000-0002-6155-3712</link><br/>'
+        f'Born {esc(data["date_of_birth"])}'
     )
     header = Table(
         [[
@@ -225,55 +220,32 @@ def build() -> Path:
                 Paragraph(esc(data["role"]), styles["role"]),
                 Paragraph(esc(data["affiliation"]), styles["affiliation"]),
             ],
-            Paragraph(links, styles["links"]),
+            Paragraph(links, styles["meta"]),
         ]],
         colWidths=[116 * mm, 46 * mm],
     )
     header.setStyle(
         TableStyle(
             [
-                ("BACKGROUND", (0, 0), (-1, -1), BLACK),
-                ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
-                ("LEFTPADDING", (0, 0), (0, 0), 12),
-                ("RIGHTPADDING", (0, 0), (0, 0), 8),
-                ("LEFTPADDING", (1, 0), (1, 0), 8),
-                ("RIGHTPADDING", (1, 0), (1, 0), 12),
-                ("TOPPADDING", (0, 0), (-1, -1), 11),
-                ("BOTTOMPADDING", (0, 0), (-1, -1), 11),
+                ("VALIGN", (0, 0), (-1, -1), "BOTTOM"),
+                ("LINEBELOW", (0, 0), (-1, -1), 1.4, ACCENT),
+                ("LEFTPADDING", (0, 0), (-1, -1), 0),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+                ("TOPPADDING", (0, 0), (-1, -1), 0),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 9),
             ]
         )
     )
 
-    identity = Table(
-        [[
-            [Paragraph("FULL NAME", styles["label"]), Paragraph(esc(data["name"]), styles["value"])],
-            [Paragraph("DATE OF BIRTH", styles["label"]), Paragraph(esc(data["date_of_birth"]), styles["value"])],
-            [Paragraph("AGE", styles["label"]), Paragraph(f'{esc(data["age"])} <font color="#626B6D">as of {esc(data["age_as_of"])}</font>', styles["value"])],
-        ]],
-        colWidths=[54 * mm, 54 * mm, 54 * mm],
-    )
-    identity.setStyle(
-        TableStyle(
-            [
-                ("BACKGROUND", (0, 0), (-1, -1), PAPER),
-                ("BOX", (0, 0), (-1, -1), 0.5, LINE),
-                ("INNERGRID", (0, 0), (-1, -1), 0.5, LINE),
-                ("VALIGN", (0, 0), (-1, -1), "TOP"),
-                ("LEFTPADDING", (0, 0), (-1, -1), 8),
-                ("RIGHTPADDING", (0, 0), (-1, -1), 8),
-                ("TOPPADDING", (0, 0), (-1, -1), 6),
-                ("BOTTOMPADDING", (0, 0), (-1, -1), 6),
-            ]
-        )
-    )
-
-    story = [header, Spacer(1, 3 * mm), identity, Spacer(1, 3.2 * mm)]
+    story = [header, Spacer(1, 4.2 * mm)]
     story.extend(
         [
             section_header("Profile", styles),
+            Spacer(1, 1.8 * mm),
             Paragraph(esc(data["profile"]), styles["body"]),
-            Spacer(1, 3.2 * mm),
+            Spacer(1, 4.1 * mm),
             section_header("Education", styles),
+            Spacer(1, 1.2 * mm),
         ]
     )
 
@@ -294,27 +266,27 @@ def build() -> Path:
                     ("VALIGN", (0, 0), (-1, -1), "TOP"),
                     ("LEFTPADDING", (0, 0), (-1, -1), 0),
                     ("RIGHTPADDING", (0, 0), (-1, -1), 0),
-                    ("TOPPADDING", (0, 0), (-1, -1), 1.5),
-                    ("BOTTOMPADDING", (0, 0), (-1, -1), 3.5),
+                    ("TOPPADDING", (0, 0), (-1, -1), 2),
+                    ("BOTTOMPADDING", (0, 0), (-1, -1), 5),
                 ]
             )
         )
         story.append(KeepTogether([education_row]))
 
-    story.extend([Spacer(1, 1.2 * mm), section_header("Selected Publications", styles)])
+    story.extend([Spacer(1, 1.5 * mm), section_header("Publications", styles), Spacer(1, 1.2 * mm)])
     for publication in data["publications"]:
         title = (
-            f'<link href="{esc(publication["doi"])}" color="#111416">'
-            f'{esc(publication["title"])} <font color="#2B8F8A">[DOI]</font></link>'
+            f'<link href="{esc(publication["doi"])}" color="#18201D">'
+            f'{esc(publication["title"])} <font color="#287E73">[DOI]</font></link>'
         )
         details = (
             f'{emphasize_name(publication["authors"], data["name"])}<br/>'
-            f'<font color="#2B8F8A">{esc(publication["venue"])}</font>'
+            f'<font color="#287E73">{esc(publication["venue"])}</font>'
         )
         publication_row = Table(
             [[
                 Paragraph(esc(publication["year"]), styles["period"]),
-                [Paragraph(title, styles["entry_title"]), Paragraph(details, styles["entry_text"])],
+                [Paragraph(title, styles["publication_title"]), Paragraph(details, styles["publication_text"])],
             ]],
             colWidths=[18 * mm, 144 * mm],
         )
@@ -324,8 +296,8 @@ def build() -> Path:
                     ("VALIGN", (0, 0), (-1, -1), "TOP"),
                     ("LEFTPADDING", (0, 0), (-1, -1), 0),
                     ("RIGHTPADDING", (0, 0), (-1, -1), 0),
-                    ("TOPPADDING", (0, 0), (-1, -1), 1),
-                    ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
+                    ("TOPPADDING", (0, 0), (-1, -1), 2),
+                    ("BOTTOMPADDING", (0, 0), (-1, -1), 7),
                 ]
             )
         )
@@ -334,12 +306,11 @@ def build() -> Path:
     story.extend(
         [
             Spacer(1, 1.2 * mm),
-            section_header("Research Interests", styles),
-            Paragraph(" <font color='#2B8F8A'>/</font> ".join(esc(item) for item in data["research_interests"]), styles["body"]),
-            Spacer(1, 3 * mm),
+            section_header("Research interests", styles),
+            Spacer(1, 1.8 * mm),
             Paragraph(
-                f'Last updated {esc(data["updated"])}. Publication metadata verified through the public ORCID and DOI records.',
-                styles["footer_note"],
+                " <font color='#287E73'>/</font> ".join(esc(item) for item in data["research_interests"]),
+                styles["interests"],
             ),
         ]
     )
