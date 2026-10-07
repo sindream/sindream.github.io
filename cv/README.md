@@ -12,6 +12,6 @@ Edit `cv_data.json`, then run:
 python3 cv/build_cv.py
 ```
 
-The builder writes the website-ready PDF to `docs/assets/cv/woojae-shin-cv.pdf`.
+The builder writes the website-ready PDF to `assets/cv/woojae-shin-cv.pdf`.
 
 Education, employment dates, exact title, department, and direct contact details are intentionally omitted until confirmed by the owner.

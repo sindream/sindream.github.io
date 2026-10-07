@@ -25,7 +25,7 @@ from reportlab.platypus import (
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_PATH = Path(__file__).with_name("cv_data.json")
-OUTPUT_PATH = ROOT / "docs" / "assets" / "cv" / "woojae-shin-cv.pdf"
+OUTPUT_PATH = ROOT / "assets" / "cv" / "woojae-shin-cv.pdf"
 
 INK = colors.HexColor("#17221E")
 MUTED = colors.HexColor("#5D6963")
@@ -300,4 +300,3 @@ def build() -> Path:
 
 if __name__ == "__main__":
     print(build())
-
