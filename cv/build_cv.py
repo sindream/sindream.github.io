@@ -14,7 +14,7 @@ from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.platypus import KeepTogether, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
+from reportlab.platypus import CondPageBreak, KeepTogether, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -79,6 +79,49 @@ def section_header(title: str, styles: dict[str, ParagraphStyle]) -> Table:
         )
     )
     return table
+
+
+def publication_row(
+    publication: dict[str, str],
+    name: str,
+    styles: dict[str, ParagraphStyle],
+) -> Table:
+    link_label = publication.get("link_label", "Link")
+    title = esc(publication["title"])
+    if publication.get("url"):
+        title = (
+            f'<link href="{esc(publication["url"])}" color="#18201D">'
+            f'{title} <font color="#287E73">[{esc(link_label)}]</font></link>'
+        )
+    if publication.get("project_url"):
+        title += (
+            f' <link href="{esc(publication["project_url"])}" color="#287E73">'
+            "[Project]</link>"
+        )
+
+    details = (
+        f'{emphasize_name(publication["authors"], name)}<br/>'
+        f'<font color="#287E73">{esc(publication["venue"])}</font>'
+    )
+    row = Table(
+        [[
+            Paragraph(esc(publication["year"]), styles["period"]),
+            [Paragraph(title, styles["publication_title"]), Paragraph(details, styles["publication_text"])],
+        ]],
+        colWidths=[18 * mm, 144 * mm],
+    )
+    row.setStyle(
+        TableStyle(
+            [
+                ("VALIGN", (0, 0), (-1, -1), "TOP"),
+                ("LEFTPADDING", (0, 0), (-1, -1), 0),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+                ("TOPPADDING", (0, 0), (-1, -1), 1.5),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 5.5),
+            ]
+        )
+    )
+    return row
 
 
 def build() -> Path:
@@ -189,6 +232,15 @@ def build() -> Path:
             textColor=INK,
             spaceAfter=0.7 * mm,
         ),
+        "publication_group": ParagraphStyle(
+            "PublicationGroup",
+            parent=base["Heading3"],
+            fontName="Nunito-Bold",
+            fontSize=10.4,
+            leading=12.8,
+            textColor=ACCENT,
+            spaceAfter=1.1 * mm,
+        ),
         "publication_text": ParagraphStyle(
             "PublicationText",
             parent=base["BodyText"],
@@ -211,7 +263,8 @@ def build() -> Path:
     links = (
         f'<link href="{esc(data["website"])}" color="#287E73">sindream.github.io</link><br/>'
         f'<link href="{esc(data["orcid"])}" color="#287E73">ORCID 0000-0002-6155-3712</link><br/>'
-        f'Born {esc(data["date_of_birth"])}'
+        f'Born {esc(data["date_of_birth"])}<br/>'
+        f'Updated {esc(data["updated"])}'
     )
     header = Table(
         [[
@@ -273,36 +326,6 @@ def build() -> Path:
         )
         story.append(KeepTogether([education_row]))
 
-    story.extend([Spacer(1, 1.5 * mm), section_header("Publications", styles), Spacer(1, 1.2 * mm)])
-    for publication in data["publications"]:
-        title = (
-            f'<link href="{esc(publication["doi"])}" color="#18201D">'
-            f'{esc(publication["title"])} <font color="#287E73">[DOI]</font></link>'
-        )
-        details = (
-            f'{emphasize_name(publication["authors"], data["name"])}<br/>'
-            f'<font color="#287E73">{esc(publication["venue"])}</font>'
-        )
-        publication_row = Table(
-            [[
-                Paragraph(esc(publication["year"]), styles["period"]),
-                [Paragraph(title, styles["publication_title"]), Paragraph(details, styles["publication_text"])],
-            ]],
-            colWidths=[18 * mm, 144 * mm],
-        )
-        publication_row.setStyle(
-            TableStyle(
-                [
-                    ("VALIGN", (0, 0), (-1, -1), "TOP"),
-                    ("LEFTPADDING", (0, 0), (-1, -1), 0),
-                    ("RIGHTPADDING", (0, 0), (-1, -1), 0),
-                    ("TOPPADDING", (0, 0), (-1, -1), 2),
-                    ("BOTTOMPADDING", (0, 0), (-1, -1), 7),
-                ]
-            )
-        )
-        story.append(KeepTogether([publication_row]))
-
     story.extend(
         [
             Spacer(1, 1.2 * mm),
@@ -312,8 +335,23 @@ def build() -> Path:
                 " <font color='#287E73'>/</font> ".join(esc(item) for item in data["research_interests"]),
                 styles["interests"],
             ),
+            Spacer(1, 4.1 * mm),
+            section_header("Publications and presentations", styles),
+            Spacer(1, 1.2 * mm),
         ]
     )
+
+    for section in data["publication_sections"]:
+        items = section["items"]
+        story.extend(
+            [
+                CondPageBreak(28 * mm),
+                Paragraph(f'{esc(section["title"])} ({len(items)})', styles["publication_group"]),
+            ]
+        )
+        for publication in items:
+            story.append(KeepTogether([publication_row(publication, data["name"], styles)]))
+        story.append(Spacer(1, 1.3 * mm))
 
     document.build(story, onFirstPage=page_decoration, onLaterPages=page_decoration)
     return OUTPUT_PATH

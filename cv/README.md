@@ -4,11 +4,14 @@ The current PDF is a public academic CV generated from:
 
 - profile and education details supplied by Woojae Shin
 - ORCID `0000-0002-6155-3712`
-- DOI metadata for the listed IEEE Robotics and Automation Letters papers
+- official DOI and proceedings metadata
+- KAIST FAIR publication, conference, and thesis records
+- KCI, DBpia, and official conference programs where applicable
 
-Edit `cv_data.json`, then run:
+Install the PDF dependency, edit `cv_data.json`, then run:
 
 ```bash
+python3 -m pip install -r cv/requirements.txt
 python3 cv/build_cv.py
 ```
 

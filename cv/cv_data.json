@@ -30,34 +30,205 @@
       "institution": "Ulsan National Institute of Science and Technology (UNIST)"
     }
   ],
-  "publications": [
+  "publication_sections": [
     {
-      "year": "2026",
-      "title": "Vision-Based Autonomous Drone Landing on Moving Platforms With Uncertain Motion via Deep Reinforcement Learning",
-      "authors": "Woojae Shin, Minwoo Kim, Taewook Park, Geunsik Bae, Seunghwan Kim, and Hyondong Oh",
-      "venue": "IEEE Robotics and Automation Letters, 11(5), 5542-5549",
-      "doi": "https://doi.org/10.1109/LRA.2026.3674011"
+      "title": "International journal articles",
+      "items": [
+        {
+          "year": "2026",
+          "title": "Vision-Based Autonomous Drone Landing on Moving Platforms With Uncertain Motion via Deep Reinforcement Learning",
+          "authors": "Woojae Shin, Minwoo Kim, Taewook Park, Geunsik Bae, Seunghwan Kim, and Hyondong Oh",
+          "venue": "IEEE Robotics and Automation Letters, 11(5), 5542-5549",
+          "url": "https://doi.org/10.1109/LRA.2026.3674011",
+          "link_label": "DOI",
+          "project_url": "https://sindream.github.io/projects/vision-based-autonomous-drone-landing/"
+        },
+        {
+          "year": "2026",
+          "title": "Real-Time Communication Relay Planning With a Low-Complexity Network Quality Prediction Model in Dynamic Indoor Missions",
+          "authors": "Jaemin Seo, Jongyun Kim, Seunghwan Kim, Changseung Kim, Woojae Shin, and Hyondong Oh",
+          "venue": "IEEE Robotics and Automation Letters, 11(1), 322-329",
+          "url": "https://doi.org/10.1109/LRA.2025.3632056",
+          "link_label": "DOI"
+        },
+        {
+          "year": "2026",
+          "title": "PACMAN: Rapid Identification of Keypoint Patch-Based Fiducial Marker in Occluded Environments",
+          "authors": "Taewook Park, Geunsik Bae, Woojae Shin, Meraj Mammadov, Jaemin Seo, Heejung Shin, and Hyondong Oh",
+          "venue": "Image and Vision Computing, 165, 105821",
+          "url": "https://doi.org/10.1016/j.imavis.2025.105821",
+          "link_label": "DOI"
+        },
+        {
+          "year": "2025",
+          "title": "EKF-Based Radar-Inertial Odometry With Online Temporal Calibration",
+          "authors": "Changseung Kim, Geunsik Bae, Woojae Shin, Sen Wang, and Hyondong Oh",
+          "venue": "IEEE Robotics and Automation Letters, 10(7), 7230-7237",
+          "url": "https://doi.org/10.1109/LRA.2025.3575320",
+          "link_label": "DOI"
+        },
+        {
+          "year": "2024",
+          "title": "Autonomous Landing on a Moving Platform Using Vision-Based Deep Reinforcement Learning",
+          "authors": "Pawel Ladosz, Meraj Mammadov, Heejung Shin, Woojae Shin, and Hyondong Oh",
+          "venue": "IEEE Robotics and Automation Letters, 9(5), 4575-4582",
+          "url": "https://doi.org/10.1109/LRA.2024.3379837",
+          "link_label": "DOI"
+        }
+      ]
     },
     {
-      "year": "2026",
-      "title": "Real-Time Communication Relay Planning With a Low-Complexity Network Quality Prediction Model in Dynamic Indoor Missions",
-      "authors": "Jaemin Seo, Jongyun Kim, Seunghwan Kim, Changseung Kim, Woojae Shin, and Hyondong Oh",
-      "venue": "IEEE Robotics and Automation Letters, 11(1), 322-329",
-      "doi": "https://doi.org/10.1109/LRA.2025.3632056"
+      "title": "Domestic journal article",
+      "items": [
+        {
+          "year": "2024",
+          "title": "Collective Navigation Through a Narrow Gap for a Swarm of UAVs Using Curriculum-Based Deep Reinforcement Learning",
+          "authors": "Myong-Yol Choi, Woojae Shin, Minwoo Kim, Hwi-Sung Park, Youngbin You, Min Lee, and Hyondong Oh",
+          "venue": "The Journal of Korea Robotics Society, 19(1), 117-129",
+          "url": "https://doi.org/10.7746/jkros.2024.19.1.117",
+          "link_label": "DOI"
+        }
+      ]
     },
     {
-      "year": "2025",
-      "title": "EKF-Based Radar-Inertial Odometry With Online Temporal Calibration",
-      "authors": "Changseung Kim, Geunsik Bae, Woojae Shin, Sen Wang, and Hyondong Oh",
-      "venue": "IEEE Robotics and Automation Letters, 10(7), 7230-7237",
-      "doi": "https://doi.org/10.1109/LRA.2025.3575320"
+      "title": "Peer-reviewed conference papers",
+      "items": [
+        {
+          "year": "2026",
+          "title": "Learning Point Cloud Geometry as a Statistical Manifold: Theory and Practice",
+          "authors": "Jinwoo Lee, Jiwoo Kim, Woojae Shin, Giseop Kim, and Hyondong Oh",
+          "venue": "Proceedings of Robotics: Science and Systems XXII, Sydney, Australia",
+          "url": "https://doi.org/10.15607/RSS.2026.XXII.138",
+          "link_label": "DOI"
+        },
+        {
+          "year": "2025",
+          "title": "RAPID: Robust and Agile Planner Using Inverse Reinforcement Learning for Vision-Based Drone Navigation",
+          "authors": "Minwoo Kim, Geunsik Bae, Jinwoo Lee, Woojae Shin, Changseung Kim, Myong-Yol Choi, Heejung Shin, and Hyondong Oh",
+          "venue": "Proceedings of Robotics: Science and Systems XXI, Los Angeles, CA, USA",
+          "url": "https://doi.org/10.15607/RSS.2025.XXI.142",
+          "link_label": "DOI"
+        },
+        {
+          "year": "2025",
+          "title": "Doppler Correspondence: Non-Iterative Scan Matching With Doppler Velocity-Based Correspondence",
+          "authors": "Jiwoo Kim, Geunsik Bae, Changseung Kim, Jinwoo Lee, Woojae Shin, and Hyondong Oh",
+          "venue": "Proceedings of Robotics: Science and Systems XXI, Los Angeles, CA, USA",
+          "url": "https://doi.org/10.15607/RSS.2025.XXI.005",
+          "link_label": "DOI"
+        }
+      ]
     },
     {
-      "year": "2024",
-      "title": "Autonomous Landing on a Moving Platform Using Vision-Based Deep Reinforcement Learning",
-      "authors": "Pawel Ladosz, Meraj Mammadov, Heejung Shin, Woojae Shin, and Hyondong Oh",
-      "venue": "IEEE Robotics and Automation Letters, 9(5), 4575-4582",
-      "doi": "https://doi.org/10.1109/LRA.2024.3379837"
+      "title": "Workshops and conference presentations",
+      "items": [
+        {
+          "year": "2026",
+          "title": "Self-Supervised Geometry Reasoning for LiDAR Simultaneous Localization and Mapping",
+          "authors": "Jiwoo Kim, Jinwoo Lee, Woojae Shin, Giseop Kim, and Hyondong Oh",
+          "venue": "From Perception to Action Workshop at RSS 2026, Sydney, Australia (non-archival)",
+          "url": "https://rcba-workshop.github.io/rss2026/accepted-papers.html",
+          "link_label": "Program"
+        },
+        {
+          "year": "2025",
+          "title": "Vision-Based Autonomous Drone Landing on Fast-Moving Platforms Via Deep Reinforcement Learning",
+          "authors": "Woojae Shin, Minwoo Kim, Taewook Park, Geunsik Bae, Seunghwan Kim, and Hyondong Oh",
+          "venue": "13th International Conference on Robot Intelligence Technology and Applications, London, UK (presentation only)",
+          "url": "https://ras.papercept.net/conferences/conferences/RITA25/program/RITA25_ContentListWeb_1.html",
+          "link_label": "Program"
+        },
+        {
+          "year": "2024",
+          "title": "ReDepth: Rectified Activations for Robust Depth Estimation",
+          "authors": "Jiwoo Kim, Woojae Shin, Heejung Shin, Minwoo Kim, Jinwoo Lee, and Hyondong Oh",
+          "venue": "12th International Conference on Robot Intelligence Technology and Applications, Ulsan, Korea (poster)",
+          "url": "https://urobot.kaist.ac.kr/rita/2024/technical-program-details/",
+          "link_label": "Program"
+        },
+        {
+          "year": "2024",
+          "title": "RAPID: Robust and Agile Planner Using Inverse Reinforcement Learning for Drones",
+          "authors": "Minwoo Kim, Geunsik Bae, Jinwoo Lee, Woojae Shin, Heejung Shin, Myong-Yol Choi, and Hyondong Oh",
+          "venue": "14th Workshop on Planning, Perception and Navigation for Intelligent Vehicles at IROS 2024, Abu Dhabi, UAE",
+          "url": "https://fair.kaist.ac.kr/international-conferences/",
+          "link_label": "Record"
+        },
+        {
+          "year": "2024",
+          "title": "Multi-State Constraint Radar-Inertial Odometry",
+          "authors": "Changseung Kim, Geunsik Bae, Woojae Shin, and Hyondong Oh",
+          "venue": "IEEE International Conference on Robotics and Automation, Yokohama, Japan (poster)",
+          "url": "https://scholarworks.unist.ac.kr/handle/201301/85489",
+          "link_label": "Record"
+        }
+      ]
+    },
+    {
+      "title": "Domestic conferences",
+      "items": [
+        {
+          "year": "2026",
+          "title": "Design and Implementation of Mission Space Modeling System for Autonomous Cooperation of Multi-Domain Unmanned Vehicles",
+          "authors": "Y. Jeong, H. Yoo, Woojae Shin, and Hyondong Oh",
+          "venue": "2026 Spring Conference of the Korean Society for Aeronautical and Space Sciences, 1689-1690",
+          "url": "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12758307",
+          "link_label": "Record"
+        },
+        {
+          "year": "2026",
+          "title": "Real-Time Communication Relay Planning With a Low-Complexity Network Quality Prediction Model in Dynamic Indoor Missions",
+          "authors": "Jaemin Seo, Jongyun Kim, Seunghwan Kim, Changseung Kim, Woojae Shin, and Hyondong Oh",
+          "venue": "21st Korea Robotics Society Annual Conference, Pyeongchang, Korea (presentation)",
+          "url": "https://kros.org/Conference/ConferenceView.asp?AC=0&CODE=CC20250902&CpPage=298",
+          "link_label": "Program"
+        },
+        {
+          "year": "2025",
+          "title": "Efficient Scan Matching Leveraging Doppler Velocity",
+          "authors": "Jiwoo Kim, Jinwoo Lee, Geunsik Bae, Changseung Kim, Woojae Shin, and Hyondong Oh",
+          "venue": "40th ICROS Annual Conference, 34-35",
+          "url": "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12313184",
+          "link_label": "Record"
+        },
+        {
+          "year": "2025",
+          "title": "Vision-Based Drone Navigation Using Inverse Reinforcement Learning",
+          "authors": "Minwoo Kim, Geunsik Bae, Jinwoo Lee, Woojae Shin, Changseung Kim, Myong-Yol Choi, Heejung Shin, and Hyondong Oh",
+          "venue": "40th ICROS Annual Conference, 153-154",
+          "url": "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12313231",
+          "link_label": "Record"
+        },
+        {
+          "year": "2025",
+          "title": "Vision-Based Autonomous Landing on a Fast-Moving Platform Using Deep Reinforcement Learning",
+          "authors": "Woojae Shin, Minwoo Kim, Taewook Park, and Hyondong Oh",
+          "venue": "20th Korea Robotics Society Annual Conference, Pyeongchang, Korea (presentation)",
+          "url": "https://fair.kaist.ac.kr/domestic-conferences/",
+          "link_label": "Record"
+        },
+        {
+          "year": "2024",
+          "title": "Real-Time Fruit Tracking Framework for Autonomous Drone-Based Crop Monitoring Systems",
+          "authors": "Geunsik Bae, Jaemin Seo, Taewook Park, Woojae Shin, Jinwoo Lee, Hankyoul Ko, Minjae Jung, Hongro Jang, Myeonggeun Gu, and Hyondong Oh",
+          "venue": "2024 Autumn Conference of the Korean Society for Aeronautical and Space Sciences, 88",
+          "url": "https://scholarworks.unist.ac.kr/handle/201301/85486",
+          "link_label": "Record"
+        }
+      ]
+    },
+    {
+      "title": "Thesis",
+      "items": [
+        {
+          "year": "2025",
+          "title": "Vision-Based Autonomous Drone Landing on Highly Dynamic Moving Platforms via Deep Reinforcement Learning",
+          "authors": "Woojae Shin",
+          "venue": "M.S. thesis, Ulsan National Institute of Science and Technology (UNIST), August 2025",
+          "url": "https://fair.kaist.ac.kr/thesisdissertations/",
+          "link_label": "Record"
+        }
+      ]
     }
   ],
   "updated": "October 2026"

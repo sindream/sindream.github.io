@@ -6,6 +6,7 @@ Academic research portfolio for Woojae Shin, published with GitHub Pages.
 
 - `index.html` - research homepage with the complete publication list
 - `profile.html` - background, identity, education, and research interests
+- `projects/` - expandable research project pages linked from publications
 - `assets/css/` and `assets/js/` - visual system and lightweight interactions
 - `assets/cv/` - downloadable CV PDF
 - `cv/` - editable CV data and PDF builder
