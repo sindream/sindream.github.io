@@ -151,11 +151,18 @@
       "items": [
         {
           "year": "2026",
+          "title": "EMTP: Efficient Multi-Robot Task Planning With Large Language Models",
+          "authors": "S. Park, M. Jung, C. Kim, Woojae Shin, S. Lee, and Hyondong Oh",
+          "venue": "Workshop at the International Conference on Robotics and Automation, Vienna, Austria (non-archival)"
+        },
+        {
+          "year": "2026",
           "title": "Self-Supervised Geometry Reasoning for LiDAR Simultaneous Localization and Mapping",
           "authors": "Jiwoo Kim, Jinwoo Lee, Woojae Shin, Giseop Kim, and Hyondong Oh",
           "venue": "From Perception to Action Workshop at RSS 2026, Sydney, Australia (non-archival)",
           "url": "https://rcba-workshop.github.io/rss2026/accepted-papers.html",
-          "link_label": "Program"
+          "link_label": "Program",
+          "preprint_url": "https://arxiv.org/abs/2606.30166"
         },
         {
           "year": "2025",
@@ -192,6 +199,12 @@
     {
       "title": "Domestic conferences",
       "items": [
+        {
+          "year": "2026",
+          "title": "A Study on NPU-Embedded Neural Network Acceleration and Reinforcement Learning-Based Anti-UAV Techniques",
+          "authors": "H. Shin, Woojae Shin, and Hyondong Oh",
+          "venue": "KIMST Conference, Jeju, Korea, June 2026"
+        },
         {
           "year": "2026",
           "title": "Design and Implementation of Mission Space Modeling System for Autonomous Cooperation of Multi-Domain Unmanned Vehicles",
@@ -241,6 +254,19 @@
       ]
     },
     {
+      "title": "Preprints",
+      "items": [
+        {
+          "year": "2026",
+          "title": "APG-Planner: Learning Vision-Based High-Speed Trajectory Planning via Analytic Policy Gradient",
+          "authors": "Jinwoo Lee, Geunsik Bae, Changseung Kim, Jiwoo Kim, Woojae Shin, and Hyondong Oh",
+          "venue": "arXiv:2611.15296 (preprint)",
+          "url": "https://arxiv.org/abs/2611.15296",
+          "link_label": "arXiv"
+        }
+      ]
+    },
+    {
       "title": "Thesis",
       "items": [
         {
@@ -252,5 +278,5 @@
       ]
     }
   ],
-  "updated": "October 2026"
+  "updated": "November 2026"
 }

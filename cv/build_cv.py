@@ -103,6 +103,11 @@ def publication_row(
             f' <link href="{esc(publication["project_url"])}" color="#287E73">'
             "[Project]</link>"
         )
+    if publication.get("preprint_url"):
+        title += (
+            f' <link href="{esc(publication["preprint_url"])}" color="#287E73">'
+            "[arXiv]</link>"
+        )
 
     details = (
         f'{emphasize_name(publication["authors"], name)}<br/>'
@@ -122,7 +127,7 @@ def publication_row(
                 ("LEFTPADDING", (0, 0), (-1, -1), 0),
                 ("RIGHTPADDING", (0, 0), (-1, -1), 0),
                 ("TOPPADDING", (0, 0), (-1, -1), 1.5),
-                ("BOTTOMPADDING", (0, 0), (-1, -1), 5.5),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 2.5),
             ]
         )
     )
